@@ -1,0 +1,29 @@
+<%-include('../cabecalho.ejs')%>
+    <h1>Jogos</h1>
+    <a href="/jogo/add">Jogo</a>
+    <table>
+        <tr>
+            <td>Ano</td>
+            <td>Genero</td>
+            <td>Desenvolvedor</td>
+            <td>Classificacao</td>
+            <td>Plataforma</td>
+            <td>Preco</td>
+            <td>Acoes</td>
+        </tr>
+      
+        <%for (const {id, ano, genero, desenvolvedor, classificacao, plataforma, preco} of Jogos) {%>
+        <tr>
+            <td><%=ano%></td>
+            <td><%=genero%></td>
+            <td><%=desenvolvedor%></td>
+            <td><%=classificacao%></td>
+            <td><%=plataforma%></td>
+            <td><%=preco%></td>
+            <td><a href="/jogo/edt/<%=id%>">Editar</a>
+            <a href="/jogo/del/<%=id%>">Excluir</a></td>
+            
+        </tr>
+        <%}%>
+    </table>
+ <%-include('../rodape.ejs')%>

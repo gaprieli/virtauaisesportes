@@ -1,0 +1,22 @@
+<%-include('../cabecalho.ejs')%>
+<h1>Editar Genero</h1>
+<div>
+<a href="/genero/lst">Listar</a>
+</div>
+<div>
+    <form  method="post">
+       
+        <input type="hidden" name="id" 
+        value="<%=Genero.id%>"><br>
+
+        <label>Tipo:</label>
+        <input type="text" name="tipo" 
+        value="<%=Genero.tipo%>"><br>
+        
+        <br>
+        <button type="submit">Cadastrar</button>
+        
+    </form>
+</div>
+
+<%-include('../rodape.ejs')%>
