@@ -27,6 +27,14 @@ export default class JogoController{
             res.render(caminhoBase + 'lst', {Jogos:resultado})
         }
 
+        this.find = async(req, res)=>{
+            const filtro = req.body.filtro;
+            const resultado = await 
+            Jogos.find({ desenvolvedor: { $regex: filtro,
+                $options: "i" }})
+            res.render(caminhoBase + 'lst', {Jogos:resultado})
+        }
+
       
                this.openEdt = async(req, res)=>{
                   //passar quem eu quero editar

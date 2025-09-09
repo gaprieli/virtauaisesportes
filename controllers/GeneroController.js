@@ -15,7 +15,7 @@ export default class GeneroController{
             await Genero.create({
                 tipo: req.body.tipo
             });
-            res.redirect('/'+caminhoBase + 'add');
+            res.redirect('/'+caminhoBase + 'lst');
         }
         this.list = async(req, res)=>{
             const resultado = await Genero.find({})

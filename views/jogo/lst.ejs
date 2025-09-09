@@ -1,15 +1,21 @@
 <%-include('../cabecalho.ejs')%>
     <h1>Jogos</h1>
-    <a href="/jogo/add">Jogo</a>
+    <div>
+        <form action="/jogo/lst" method="post">
+            <input type="text" name="filtro" id="" placeholder="Digite o desenvolvedor para pesquisar">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+    <a href="/jogo/add">Adicionar Jogo</a>
     <table>
         <tr>
-            <td>Ano</td>
-            <td>Genero</td>
-            <td>Desenvolvedor</td>
-            <td>Classificacao</td>
-            <td>Plataforma</td>
-            <td>Preco</td>
-            <td>Acoes</td>
+            <th>Ano</th>
+            <th>Gênero</th>
+            <th>Desenvolvedor</th>
+            <th>Classificação</th>
+            <th>Plataforma</th>
+            <th>Preço</th>
+            <th>Ações</th>
         </tr>
       
         <%for (const {id, ano, genero, desenvolvedor, classificacao, plataforma, preco} of Jogos) {%>
