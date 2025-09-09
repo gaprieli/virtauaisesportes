@@ -1,24 +1,25 @@
 <%-include('../cabecalho.ejs')%>
     <h1>Generos</h1>
     <div>
-        <form action="
-        " method="post">
-        <input type="text" name="filtro"
-         id="" placeholder="digite o nome">
-         <button type="submit">Pesquisar</button>
-    </form>
+        <form action="/genero/lst" method="post">
+            <input type="text" name="filtro" id="" placeholder="Digite o tipo para pesquisar">
+            <button type="submit">Pesquisar</button>
+        </form>
     </div>
     <a href="/genero/add">Adicionar Genero</a>
     <table>
         <tr>
-            <td>Tipo</td>
+            <th>Tipo</th>
+            <th>Ações</th>
         </tr>
       
         <%for (const {id, tipo} of Generos) {%>
         <tr>
             <td><%=tipo%></td>
-            <td><a href="/genero/edt/<%=id%>">Editar</a>
-            <a href="/genero/del/<%=id%>">Excluir</a></td>
+            <td>
+                <a href="/genero/edt/<%=id%>">Editar</a>
+                <a href="/genero/del/<%=id%>">Excluir</a>
+            </td>
         </tr>
         <%}%>
     </table>

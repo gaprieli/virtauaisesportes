@@ -32,8 +32,8 @@ export default class JogoController{
                   //passar quem eu quero editar
                   const id = req.params.id
                   console.log(id)
-                  const jogo = await Jogos.findById(id) 
-                  console.log(Jogos)
+                  const jogo = await Jogos.findById(id)
+                  console.log(jogo)
                  res.render(caminhoBase + "edt", 
                 {Jogo:jogo})
               }
